@@ -1,0 +1,129 @@
+/* ============================================================
+   GENESIS Design Tokens
+   Editorial, Prestigious, High-Contrast & Accessible
+   ============================================================ */
+
+:root {
+  /* Brand Palette */
+  --color-burgundy: #5D1222;
+  --color-burgundy-hover: #480D19;
+  --color-burgundy-light: #7E1C31;
+  --color-burgundy-surface: #F8F1F2;
+  
+  --color-charcoal: #141416;
+  --color-charcoal-soft: #232328;
+  --color-charcoal-muted: #3D3D45;
+  
+  --color-warm-white: #FCFAF7;
+  --color-warm-white-dim: #F4EFEB;
+  --color-cream: #EFE8E1;
+
+  --color-gold: #C69214;
+  --color-gold-light: #DFAB33;
+  --color-gold-subtle: #FDF7EB;
+  
+  --color-magenta: #C20E58;
+  --color-magenta-subtle: #FDE8F1;
+  
+  --color-diu-blue: #003F7A;
+  --color-diu-blue-subtle: #EBF3FA;
+
+  /* Neutrals & Surfaces */
+  --color-surface-base: var(--color-warm-white);
+  --color-surface-card: #FFFFFF;
+  --color-surface-elevated: #FFFFFF;
+  --color-surface-dark: var(--color-charcoal);
+  --color-surface-dark-card: var(--color-charcoal-soft);
+
+  --color-text-primary: #151518;
+  --color-text-secondary: #4E4E56;
+  --color-text-muted: #7A7A85;
+  --color-text-inverse: #FCFAF7;
+  --color-text-inverse-muted: #C0C0C8;
+
+  --color-border-subtle: #E8E2DA;
+  --color-border-default: #D6CEC3;
+  --color-border-strong: #9C9488;
+  --color-border-dark: #32323A;
+
+  /* Semantic Feedback (Data-dense & High-contrast) */
+  --color-success: #157A42;
+  --color-success-bg: #EAF7EE;
+  --color-success-border: #A6E3B8;
+
+  --color-warning: #B36800;
+  --color-warning-bg: #FEF7E6;
+  --color-warning-border: #F7D082;
+
+  --color-danger: #BA1A1A;
+  --color-danger-bg: #FDF1F1;
+  --color-danger-border: #F5B0B0;
+
+  --color-info: #0A66C2;
+  --color-info-bg: #EBF4FC;
+  --color-info-border: #A3CDF5;
+
+  /* Status Colors for Registration Management */
+  --status-pending-text: #945B00;
+  --status-pending-bg: #FFF7EB;
+  --status-pending-border: #FCE1B6;
+
+  --status-verified-text: #0E6835;
+  --status-verified-bg: #EDF9F1;
+  --status-verified-border: #B7E8C8;
+
+  --status-rejected-text: #A71D1D;
+  --status-rejected-bg: #FEEFEF;
+  --status-rejected-border: #F9BFBF;
+
+  --status-attended-text: #0A5E8C;
+  --status-attended-bg: #EDF6FC;
+  --status-attended-border: #B9DFF8;
+
+  /* Typography Stacks */
+  --font-editorial: "Newsreader", "Playfair Display", "Times New Roman", Georgia, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Spacing Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Border Radius - Refined & Crisp, avoid overly bubbly curves */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-pill: 9999px;
+
+  /* Shadows - Subtle & controlled */
+  --shadow-sm: 0 1px 2px rgba(20, 20, 22, 0.05);
+  --shadow-md: 0 4px 12px rgba(20, 20, 22, 0.06);
+  --shadow-lg: 0 12px 28px rgba(20, 20, 22, 0.09);
+
+  /* Layout Constrains */
+  --container-max: 1200px;
+  --container-narrow: 840px;
+  --container-padding: 24px;
+
+  /* Animation Timings */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 640px) {
+  :root {
+    --container-padding: 16px;
+  }
+}

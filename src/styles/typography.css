@@ -1,0 +1,114 @@
+/* ============================================================
+   GENESIS Typography Classes
+   Editorial serif headings & crisp sans-serif interface text
+   ============================================================ */
+
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Headings */
+.title-display {
+  font-family: var(--font-editorial);
+  font-size: clamp(2.75rem, 6vw, 4.75rem);
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--color-text-primary);
+}
+
+.title-hero {
+  font-family: var(--font-editorial);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+
+.title-section {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--color-text-primary);
+}
+
+.title-subsection {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+}
+
+.title-card {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  line-height: 1.35;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Overlines & Labels */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-burgundy);
+}
+
+.eyebrow-muted {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* Body Scales */
+.body-lead {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+.body-default {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.body-small {
+  font-family: var(--font-sans);
+  font-size: 0.825rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.quote-editorial {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.35rem, 2.5vw, 1.95rem);
+  line-height: 1.4;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-charcoal);
+}
