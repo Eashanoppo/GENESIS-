@@ -19,30 +19,50 @@ export default function FAQSection() {
         borderBottom: "1px solid var(--color-border-subtle)",
       }}
     >
-      <div className="container-narrow">
-        <div style={{ marginBottom: "40px" }}>
-          <span className="eyebrow" style={{ marginBottom: "12px" }}>
-            Inquiries & Clarity
-          </span>
-          <h2 className="title-section" style={{ color: "var(--color-charcoal)", marginBottom: "12px" }}>
+      <div className="container" style={{ maxWidth: "760px" }}>
+        {/* Section Header */}
+        <div style={{ marginBottom: "clamp(44px, 6vw, 64px)", textAlign: "left" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "14px" }}>
+            <span
+              style={{
+                width: "6px",
+                height: "6px",
+                backgroundColor: "var(--color-burgundy)",
+                transform: "rotate(45deg)",
+                display: "inline-block",
+              }}
+            />
+            <span className="eyebrow" style={{ color: "var(--color-burgundy)" }}>
+              Inquiries &amp; Answers
+            </span>
+          </div>
+
+          <h2
+            className="title-section"
+            style={{
+              color: "var(--color-charcoal)",
+              fontSize: "clamp(2rem, 3.6vw, 2.85rem)",
+              lineHeight: 1.15,
+              marginBottom: "14px",
+            }}
+          >
             Frequently Asked Questions
           </h2>
-          <p className="body-lead">
-            Common questions regarding eligibility, registration tiers, payment processing, and event-day logistics.
+
+          <p className="body-lead" style={{ color: "var(--color-text-secondary)" }}>
+            Common questions regarding eligibility, registration tiers, payment verification, and summit day protocols.
           </p>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+        {/* Flat Minimalist Editorial Accordion */}
+        <div style={{ borderTop: "1px solid var(--color-border-default)" }}>
           {FAQS.map((item, idx) => {
             const isOpen = openIdx === idx;
             return (
               <div
                 key={idx}
                 style={{
-                  border: "1px solid var(--color-border-subtle)",
-                  borderRadius: "var(--radius-sm)",
-                  backgroundColor: "var(--color-surface-base)",
-                  overflow: "hidden",
+                  borderBottom: "1px solid var(--color-border-subtle)",
                 }}
               >
                 <button
@@ -51,27 +71,42 @@ export default function FAQSection() {
                   onClick={() => toggle(idx)}
                   style={{
                     width: "100%",
-                    padding: "20px 24px",
+                    padding: "24px 0",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-between",
-                    gap: "16px",
+                    gap: "20px",
                     textAlign: "left",
-                    fontWeight: 600,
-                    fontSize: "1.05rem",
-                    color: isOpen ? "var(--color-burgundy)" : "var(--color-charcoal)",
-                    transition: "color var(--transition-fast)",
+                    cursor: "pointer",
+                    backgroundColor: "transparent",
+                    border: "none",
                   }}
                 >
-                  <span>{item.question}</span>
                   <span
                     style={{
-                      fontSize: "1.2rem",
-                      lineHeight: 1,
-                      transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
-                      transition: "transform var(--transition-fast)",
-                      color: "var(--color-burgundy)",
+                      fontFamily: "var(--font-editorial)",
+                      fontSize: "clamp(1.15rem, 1.8vw, 1.35rem)",
+                      fontWeight: 600,
+                      color: isOpen ? "var(--color-burgundy)" : "var(--color-charcoal)",
+                      lineHeight: 1.3,
+                      transition: "color var(--transition-fast)",
                     }}
+                  >
+                    {item.question}
+                  </span>
+
+                  <span
+                    style={{
+                      fontSize: "1.4rem",
+                      fontWeight: 400,
+                      lineHeight: 1,
+                      color: isOpen ? "var(--color-burgundy)" : "var(--color-gold)",
+                      transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
+                      transition: "transform var(--transition-fast), color var(--transition-fast)",
+                      display: "inline-block",
+                      flexShrink: 0,
+                    }}
+                    aria-hidden="true"
                   >
                     +
                   </span>
@@ -80,12 +115,11 @@ export default function FAQSection() {
                 {isOpen && (
                   <div
                     style={{
-                      padding: "0 24px 20px 24px",
+                      paddingBottom: "24px",
+                      paddingRight: "24px",
                       color: "var(--color-text-secondary)",
                       fontSize: "0.95rem",
-                      lineHeight: 1.65,
-                      borderTop: "1px solid var(--color-border-subtle)",
-                      paddingTop: "16px",
+                      lineHeight: 1.7,
                     }}
                   >
                     {item.answer}

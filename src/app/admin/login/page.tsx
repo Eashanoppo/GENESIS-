@@ -1,11 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function AdminLoginPage() {
-  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -31,8 +29,8 @@ export default function AdminLoginPage() {
         return;
       }
 
-      router.push("/admin/dashboard");
-      router.refresh();
+      // Hard redirect to ensure auth cookies are included in the subsequent document request
+      window.location.href = "/admin/dashboard";
     } catch {
       setErrorMsg("Failed to connect to authentication service.");
       setLoading(false);
@@ -105,14 +103,15 @@ export default function AdminLoginPage() {
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label className="form-label">Admin Email</label>
+              <label className="form-label">Admin ID / Email</label>
               <input
-                type="email"
+                type="text"
                 className="form-input"
-                placeholder="admin@rotaract.org.bd"
+                placeholder="252-35-242.admin56@diu.edu.bd"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                autoComplete="username"
               />
             </div>
 
@@ -125,6 +124,7 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                autoComplete="current-password"
               />
             </div>
 

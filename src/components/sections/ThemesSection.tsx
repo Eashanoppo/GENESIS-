@@ -1,34 +1,34 @@
 import React from "react";
 
 export default function ThemesSection() {
-  const themes = [
+  const pillars = [
     {
       num: "01",
-      title: "Learn",
+      title: "LEARN",
       tagline: "Discover new ideas and perspectives",
       description:
-        "Absorb transformative academic insights, technological trends, and rigorous intellectual knowledge from established educators and industry leaders.",
+        "Absorb transformative academic insights, technological frontiers, and rigorous intellectual knowledge from established educators and industry leaders.",
     },
     {
       num: "02",
-      title: "Create",
+      title: "CREATE",
       tagline: "Turn concepts into possibilities",
       description:
-        "Learn how to translate conceptual knowledge into actionable software solutions, research projects, and community-driven initiatives.",
+        "Translate conceptual knowledge into actionable software solutions, impactful research projects, and community-driven initiatives.",
     },
     {
       num: "03",
-      title: "Grow",
+      title: "GROW",
       tagline: "Develop soft skills & confidence",
       description:
         "Master the fine art of professional communication, persuasive public speaking, and executive demeanor required in contemporary workplaces.",
     },
     {
       num: "04",
-      title: "Connect",
+      title: "CONNECT",
       tagline: "Build meaningful relationships",
       description:
-        "Forge relationships with like-minded peers, mentors, and the wider DIU Rotaract community that extend far beyond university corridors.",
+        "Forge relationships with like-minded peers, visiting mentors, and the wider DIU Rotaract community that extend far beyond campus corridors.",
     },
   ];
 
@@ -41,70 +41,113 @@ export default function ThemesSection() {
       }}
     >
       <div className="container">
-        <div style={{ maxWidth: "700px", marginBottom: "48px" }}>
-          <span className="eyebrow" style={{ marginBottom: "12px" }}>
-            The Pillars
-          </span>
-          <h2 className="title-section" style={{ color: "var(--color-charcoal)", marginBottom: "14px" }}>
+        {/* Section Header */}
+        <div style={{ maxWidth: "720px", marginBottom: "clamp(48px, 7vw, 76px)" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "14px" }}>
+            <span
+              style={{
+                width: "6px",
+                height: "6px",
+                backgroundColor: "var(--color-burgundy)",
+                transform: "rotate(45deg)",
+                display: "inline-block",
+              }}
+            />
+            <span className="eyebrow" style={{ color: "var(--color-burgundy)" }}>
+              The Four Dimensions
+            </span>
+          </div>
+
+          <h2
+            className="title-section"
+            style={{
+              color: "var(--color-charcoal)",
+              fontSize: "clamp(2rem, 3.6vw, 2.85rem)",
+              lineHeight: 1.15,
+              marginBottom: "14px",
+            }}
+          >
             What GENESIS Is About
           </h2>
-          <p className="body-lead">
+
+          <p className="body-lead" style={{ color: "var(--color-text-secondary)" }}>
             Four interconnected dimensions designed to elevate your university journey into a transformative personal and professional experience.
           </p>
         </div>
 
+        {/* 4 Editorial Columns */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: "28px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: "clamp(28px, 4vw, 44px)",
+            position: "relative",
           }}
         >
-          {themes.map((theme) => (
+          {pillars.map((pillar, idx) => (
             <div
-              key={theme.num}
+              key={pillar.num}
               style={{
-                padding: "32px 24px",
-                borderLeft: "2px solid var(--color-burgundy)",
-                backgroundColor: "var(--color-surface-base)",
-                borderRadius: "0 var(--radius-sm) var(--radius-sm) 0",
+                display: "flex",
+                flexDirection: "column",
+                position: "relative",
+                paddingTop: "16px",
+                borderTop: "2px solid var(--color-border-default)",
               }}
             >
+              {/* Large Subtle Number Anchor */}
               <span
                 style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: "0.85rem",
-                  fontWeight: 700,
-                  color: "var(--color-burgundy)",
-                  display: "block",
+                  fontFamily: "var(--font-editorial)",
+                  fontSize: "clamp(2.75rem, 4vw, 3.8rem)",
+                  fontWeight: 400,
+                  lineHeight: 1,
+                  color: "var(--color-border-default)",
                   marginBottom: "8px",
+                  display: "block",
+                  letterSpacing: "-0.04em",
                 }}
               >
-                {theme.num}
+                {pillar.num}
               </span>
+
+              {/* Primary Visual Focus: Word */}
               <h3
                 style={{
                   fontFamily: "var(--font-editorial)",
-                  fontSize: "1.75rem",
+                  fontSize: "clamp(1.75rem, 2.4vw, 2.2rem)",
                   fontWeight: 600,
+                  letterSpacing: "-0.01em",
                   color: "var(--color-charcoal)",
-                  marginBottom: "6px",
+                  marginBottom: "8px",
+                  lineHeight: 1.1,
                 }}
               >
-                {theme.title}
+                {pillar.title}
               </h3>
+
+              {/* Tagline */}
               <p
                 style={{
-                  fontSize: "0.9rem",
+                  fontSize: "0.85rem",
                   fontWeight: 600,
-                  color: "var(--color-text-primary)",
+                  color: "var(--color-burgundy)",
                   marginBottom: "12px",
+                  lineHeight: 1.4,
                 }}
               >
-                {theme.tagline}
+                {pillar.tagline}
               </p>
-              <p style={{ fontSize: "0.875rem", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
-                {theme.description}
+
+              {/* Short Description */}
+              <p
+                style={{
+                  fontSize: "0.88rem",
+                  color: "var(--color-text-secondary)",
+                  lineHeight: 1.65,
+                }}
+              >
+                {pillar.description}
               </p>
             </div>
           ))}

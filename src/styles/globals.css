@@ -1,5 +1,6 @@
 @import "./tokens.css";
 @import "./typography.css";
+@import "./hero.css";
 
 /* Reset & Box Sizing */
 *, *::before, *::after {
@@ -287,3 +288,54 @@ button {
     gap: 40px;
   }
 }
+
+/* Program Timeline Layout */
+.timeline-rail {
+  position: absolute;
+  top: 14px;
+  bottom: 24px;
+  left: 100px;
+  width: 1.5px;
+  background-color: var(--color-border-default);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 36px;
+  align-items: start;
+  position: relative;
+}
+
+.timeline-time {
+  text-align: right;
+  padding-top: 2px;
+}
+
+.timeline-node {
+  position: absolute;
+  left: 95px;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+@media (max-width: 640px) {
+  .timeline-rail {
+    left: 12px !important;
+  }
+  .timeline-node {
+    left: 7px !important;
+  }
+  .timeline-item {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    padding-left: 32px !important;
+  }
+  .timeline-time {
+    text-align: left !important;
+  }
+}
+

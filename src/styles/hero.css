@@ -1,0 +1,656 @@
+/* ============================================================
+   GENESIS Hero Section — Scoped Visual Identity
+   Inspired by the official GENESIS event artwork.
+   Palette: Deep burgundy, wine, deep purple, near-black purple,
+            warm white, gold, and Rotaract magenta.
+   ============================================================ */
+
+.genesis-hero {
+  --gh-bg-base: #14070E;
+  --gh-bg-wine: #220B17;
+  --gh-bg-purple: #2D0B1C;
+  --gh-bg-burgundy: #4A1028;
+  --gh-bg-crimson: #6E1429;
+  --gh-gold: #F5C84B;
+  --gh-gold-light: #FCE182;
+  --gh-gold-muted: #C99A2E;
+  --gh-gold-glow: rgba(245, 200, 75, 0.18);
+  --gh-magenta: #C2185B;
+  --gh-white: #F8F5EF;
+  --gh-white-muted: rgba(248, 245, 239, 0.82);
+  --gh-white-dim: rgba(248, 245, 239, 0.55);
+  --gh-border-gold: rgba(245, 200, 75, 0.28);
+  --gh-border-wine: rgba(245, 200, 75, 0.14);
+
+  position: relative;
+  background-color: var(--gh-bg-base);
+  color: var(--gh-white);
+  padding-top: clamp(48px, 6.5vw, 88px);
+  padding-bottom: clamp(64px, 8vw, 108px);
+  border-bottom: 1px solid var(--gh-border-gold);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ============================================================
+   Background Layers & Atmospheric Geometry
+   ============================================================ */
+
+.genesis-hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Base Atmospheric Gradient Blooms */
+.genesis-hero-bloom-primary {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  width: clamp(380px, 45vw, 750px);
+  height: clamp(380px, 45vw, 750px);
+  background: radial-gradient(
+    circle at center,
+    rgba(245, 200, 75, 0.16) 0%,
+    rgba(194, 24, 91, 0.18) 32%,
+    rgba(74, 16, 40, 0.35) 55%,
+    rgba(20, 7, 14, 0) 75%
+  );
+  filter: blur(40px);
+  opacity: 0.85;
+}
+
+.genesis-hero-bloom-secondary {
+  position: absolute;
+  bottom: -10%;
+  left: -8%;
+  width: clamp(320px, 40vw, 620px);
+  height: clamp(320px, 40vw, 620px);
+  background: radial-gradient(
+    circle at center,
+    rgba(110, 20, 41, 0.32) 0%,
+    rgba(45, 11, 28, 0.2) 45%,
+    rgba(20, 7, 14, 0) 70%
+  );
+  filter: blur(50px);
+  opacity: 0.9;
+}
+
+/* Architectural Diamond Geometry Backdrop */
+.genesis-hero-diamond-outer {
+  position: absolute;
+  top: 48%;
+  right: 18%;
+  width: clamp(380px, 42vw, 680px);
+  height: clamp(380px, 42vw, 680px);
+  transform: translate(30%, -50%) rotate(45deg);
+  border: 1px solid rgba(245, 200, 75, 0.08);
+  background: linear-gradient(
+    135deg,
+    rgba(245, 200, 75, 0.03) 0%,
+    rgba(194, 24, 91, 0.04) 50%,
+    transparent 100%
+  );
+}
+
+.genesis-hero-diamond-inner {
+  position: absolute;
+  top: 48%;
+  right: 18%;
+  width: clamp(260px, 30vw, 480px);
+  height: clamp(260px, 30vw, 480px);
+  transform: translate(30%, -50%) rotate(45deg);
+  border: 1px dashed rgba(245, 200, 75, 0.14);
+}
+
+/* Thin Grid & Axis Lines */
+.genesis-hero-axis-line {
+  position: absolute;
+  top: 52%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(245, 200, 75, 0.12) 20%,
+    rgba(245, 200, 75, 0.22) 50%,
+    rgba(245, 200, 75, 0.08) 80%,
+    transparent 100%
+  );
+}
+
+/* Lower Geometric Diamond Matrix (Inspired by Artwork Lower Pattern) */
+.genesis-hero-matrix {
+  position: absolute;
+  bottom: 24px;
+  right: 28%;
+  opacity: 0.35;
+}
+
+/* Soft Lens Flare Accent */
+.genesis-hero-flare {
+  position: absolute;
+  top: 26%;
+  right: 32%;
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(245, 200, 75, 0.6) 20%,
+    rgba(194, 24, 91, 0.25) 45%,
+    transparent 70%
+  );
+  filter: blur(3px);
+  transform: rotate(45deg);
+}
+
+.genesis-hero-flare::before,
+.genesis-hero-flare::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.genesis-hero-flare::before {
+  width: 140px;
+  height: 1px;
+}
+
+.genesis-hero-flare::after {
+  width: 1px;
+  height: 140px;
+}
+
+/* ============================================================
+   Layout & Grid
+   ============================================================ */
+
+.genesis-hero-container {
+  position: relative;
+  z-index: 1;
+}
+
+.genesis-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(36px, 5vw, 68px);
+  align-items: center;
+}
+
+/* ============================================================
+   Left Column: Typography & Content
+   ============================================================ */
+
+.genesis-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Institutional Badge */
+.genesis-hero-institution {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  background: rgba(245, 200, 75, 0.08);
+  border: 1px solid rgba(245, 200, 75, 0.25);
+  border-radius: var(--radius-xs, 4px);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.genesis-hero-institution-name {
+  font-size: 0.725rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gh-gold);
+}
+
+.genesis-hero-sep {
+  color: rgba(245, 200, 75, 0.5);
+  font-size: 0.75rem;
+}
+
+.genesis-hero-institution-sub {
+  font-size: 0.725rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gh-white-muted);
+}
+
+/* Display Titles */
+.genesis-hero-title {
+  margin-bottom: 16px;
+  line-height: 0.98;
+}
+
+.genesis-hero-title-main {
+  display: block;
+  font-family: var(--font-editorial, "Newsreader", serif);
+  font-size: clamp(3.6rem, 7.8vw, 6.4rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--gh-white);
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.45);
+}
+
+.genesis-hero-title-sub {
+  display: block;
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+  font-weight: 600;
+  color: var(--gh-gold);
+  letter-spacing: 0.02em;
+  margin-top: 10px;
+  text-shadow: 0 2px 18px rgba(245, 200, 75, 0.25);
+}
+
+/* Editorial Tag */
+.genesis-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(74, 16, 40, 0.55);
+  border: 1px solid var(--gh-border-gold);
+  border-radius: var(--radius-xs, 4px);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gh-gold);
+  margin-bottom: 24px;
+}
+
+.genesis-hero-tag-diamond {
+  width: 6px;
+  height: 6px;
+  background-color: var(--gh-gold);
+  transform: rotate(45deg);
+  display: inline-block;
+}
+
+/* Narrative Lead Paragraph */
+.genesis-hero-lead {
+  font-size: clamp(1.025rem, 1.7vw, 1.175rem);
+  line-height: 1.65;
+  color: var(--gh-white-muted);
+  max-width: 540px;
+  margin-bottom: 32px;
+}
+
+/* Editorial Logistics Bar */
+.genesis-hero-logistics {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: clamp(14px, 2.2vw, 24px);
+  padding: 18px 0;
+  border-top: 1px solid var(--gh-border-wine);
+  border-bottom: 1px solid var(--gh-border-wine);
+  margin-bottom: 32px;
+  width: 100%;
+  max-width: 600px;
+  align-items: center;
+}
+
+.genesis-hero-logistics-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.genesis-hero-logistics-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gh-gold-muted);
+}
+
+.genesis-hero-logistics-value {
+  font-size: clamp(0.9rem, 1.25vw, 1.05rem);
+  font-weight: 700;
+  color: var(--gh-white);
+}
+
+.genesis-hero-logistics-value.accent {
+  color: var(--gh-gold);
+}
+
+.genesis-hero-logistics-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--gh-border-wine);
+}
+
+/* Action Buttons */
+.genesis-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.genesis-hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background-color: var(--gh-gold);
+  color: #14070E;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-xs, 4px);
+  border: 1px solid var(--gh-gold);
+  box-shadow: 0 4px 18px rgba(245, 200, 75, 0.28);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.genesis-hero-btn-primary:hover {
+  background-color: var(--gh-gold-light);
+  border-color: var(--gh-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245, 200, 75, 0.4);
+}
+
+.genesis-hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  background-color: transparent;
+  color: var(--gh-white);
+  font-size: 0.925rem;
+  font-weight: 600;
+  border-radius: var(--radius-xs, 4px);
+  border: 1px solid rgba(248, 245, 239, 0.32);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.genesis-hero-btn-secondary:hover {
+  border-color: var(--gh-gold);
+  color: var(--gh-gold);
+  background-color: rgba(245, 200, 75, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Scarcity / Venue Capacity Indicator */
+.genesis-hero-scarcity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.825rem;
+  color: var(--gh-white-dim);
+}
+
+.genesis-hero-pulse {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--gh-gold);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.genesis-hero-pulse::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid var(--gh-gold);
+  animation: gh-pulse 2s infinite ease-out;
+}
+
+@keyframes gh-pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* ============================================================
+   Right Column: Integrated Artwork Presentation
+   ============================================================ */
+
+.genesis-hero-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Radiant Backlight Behind Artwork */
+.genesis-hero-visual-glow {
+  position: absolute;
+  inset: -16px;
+  background: radial-gradient(
+    circle at 65% 35%,
+    rgba(245, 200, 75, 0.28) 0%,
+    rgba(194, 24, 91, 0.24) 40%,
+    rgba(20, 7, 14, 0) 75%
+  );
+  filter: blur(28px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Architectural Frame with Corner Ticks */
+.genesis-hero-frame {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border: 1px solid var(--gh-border-gold);
+  background: #14070E;
+  padding: 8px;
+  box-shadow: 
+    0 24px 54px -12px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(245, 200, 75, 0.12);
+  border-radius: var(--radius-xs, 4px);
+}
+
+/* Architectural Corner Accent Marks */
+.genesis-hero-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+}
+
+.genesis-hero-corner-tl {
+  top: -2px;
+  left: -2px;
+  border-top: 2px solid var(--gh-gold);
+  border-left: 2px solid var(--gh-gold);
+}
+
+.genesis-hero-corner-tr {
+  top: -2px;
+  right: -2px;
+  border-top: 2px solid var(--gh-gold);
+  border-right: 2px solid var(--gh-gold);
+}
+
+.genesis-hero-corner-bl {
+  bottom: -2px;
+  left: -2px;
+  border-bottom: 2px solid var(--gh-gold);
+  border-left: 2px solid var(--gh-gold);
+}
+
+.genesis-hero-corner-br {
+  bottom: -2px;
+  right: -2px;
+  border-bottom: 2px solid var(--gh-gold);
+  border-right: 2px solid var(--gh-gold);
+}
+
+/* Image Aspect Ratio Canvas */
+.genesis-hero-image-canvas {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 2px;
+  background-color: #1A0A13;
+}
+
+/* Provenance Institutional Strip below Artwork */
+.genesis-hero-provenance {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px 4px 14px;
+  font-size: 0.725rem;
+  color: var(--gh-white-muted);
+  border-top: 1px solid rgba(245, 200, 75, 0.15);
+  margin-top: 6px;
+}
+
+.genesis-hero-provenance-text {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--gh-white-dim);
+}
+
+.genesis-hero-provenance-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--gh-gold);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
+   Responsive Breakpoints
+   ============================================================ */
+
+@media (max-width: 992px) {
+  .genesis-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .genesis-hero-content {
+    align-items: flex-start;
+  }
+
+  .genesis-hero-lead {
+    max-width: 100%;
+  }
+
+  .genesis-hero-visual {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .genesis-hero {
+    padding-top: 40px;
+    padding-bottom: 56px;
+  }
+
+  .genesis-hero-institution {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 6px;
+    padding: 6px 10px;
+  }
+
+  .genesis-hero-institution-name {
+    font-size: 0.68rem;
+  }
+
+  .genesis-hero-institution-sub {
+    font-size: 0.68rem;
+  }
+
+  .genesis-hero-title-main {
+    font-size: clamp(3.2rem, 13vw, 4.4rem);
+  }
+
+  .genesis-hero-title-sub {
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    margin-top: 6px;
+  }
+
+  .genesis-hero-logistics {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px 0;
+  }
+
+  .genesis-hero-logistics-divider {
+    display: none;
+  }
+
+  .genesis-hero-logistics-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    border-bottom: 1px dashed rgba(245, 200, 75, 0.1);
+  }
+
+  .genesis-hero-logistics-item:last-child {
+    border-bottom: none;
+  }
+
+  .genesis-hero-ctas {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .genesis-hero-btn-primary,
+  .genesis-hero-btn-secondary {
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 0.925rem;
+  }
+
+  .genesis-hero-provenance {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 8px 10px 2px 10px;
+  }
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .genesis-hero-pulse::after {
+    animation: none;
+  }
+  .genesis-hero-btn-primary,
+  .genesis-hero-btn-secondary {
+    transition: none;
+  }
+}

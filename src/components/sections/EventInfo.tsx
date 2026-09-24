@@ -1,27 +1,30 @@
 import React from "react";
-import { EVENT_CONFIG } from "@/config/event";
 
 export default function EventInfo() {
-  const details = [
+  const blocks = [
     {
-      label: "DATE & DAY",
-      primary: EVENT_CONFIG.dateDisplay,
-      secondary: "Tuesday, 2026",
+      label: "DATE & TIMING",
+      primary: "03 NOVEMBER 2026",
+      secondary: "Tuesday · Full-Day Summit",
+      accent: false,
     },
     {
-      label: "VENUE",
-      primary: "ICH (International Conference Hall)",
-      secondary: "AB4, 3rd Floor, Daffodil International University",
+      label: "VENUE DESTINATION",
+      primary: "ICH, AB4 · 3RD FLOOR",
+      secondary: "Daffodil International University",
+      accent: false,
     },
     {
-      label: "ORGANIZED BY",
-      primary: "Rotaract Club of DIU",
-      secondary: "District 3281, Bangladesh",
+      label: "REGISTRATION PERIOD",
+      primary: "25 OCT — 01 NOV",
+      secondary: "Pre-registration required · Limited seats",
+      accent: true,
     },
     {
-      label: "REGISTRATION TIMELINE",
-      primary: "25 Oct – 01 Nov 2026",
-      secondary: "Strict seat allotment / Pre-registration required",
+      label: "FORMAT & EXPERIENCE",
+      primary: "IDEAS • INSPIRATION • CONNECTION",
+      secondary: "Plenary sessions, workshops & fellowship",
+      accent: false,
     },
   ];
 
@@ -35,49 +38,102 @@ export default function EventInfo() {
       }}
     >
       <div className="container">
-        <div style={{ marginBottom: "36px" }}>
-          <span className="eyebrow" style={{ marginBottom: "8px" }}>
-            Essential Logistics
+        {/* Section Intro Eyebrow */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "32px", flexWrap: "wrap", gap: "12px" }}>
+          <div>
+            <span className="eyebrow" style={{ color: "var(--color-burgundy)", marginBottom: "6px", display: "inline-block" }}>
+              Essential Logistics
+            </span>
+            <h2
+              style={{
+                fontFamily: "var(--font-editorial)",
+                fontSize: "clamp(1.5rem, 2.8vw, 2.1rem)",
+                fontWeight: 600,
+                color: "var(--color-charcoal)",
+                lineHeight: 1.15,
+              }}
+            >
+              GENESIS at a Glance
+            </h2>
+          </div>
+
+          <span
+            style={{
+              fontSize: "0.75rem",
+              fontWeight: 600,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: "var(--color-text-muted)",
+            }}
+          >
+            Summit Overview · Quick Facts
           </span>
-          <h2 className="title-subsection" style={{ color: "var(--color-charcoal)" }}>
-            GENESIS at a Glance
-          </h2>
         </div>
 
+        {/* Editorial Information Strip */}
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: "24px",
+            border: "1px solid var(--color-border-default)",
+            borderRadius: "var(--radius-sm)",
+            backgroundColor: "var(--color-surface-base)",
+            overflow: "hidden",
           }}
         >
-          {details.map((item, idx) => (
+          {blocks.map((block, idx) => (
             <div
               key={idx}
               style={{
-                padding: "24px",
-                backgroundColor: "var(--color-surface-base)",
-                border: "1px solid var(--color-border-subtle)",
-                borderRadius: "var(--radius-sm)",
+                padding: "clamp(24px, 3vw, 32px) 24px",
+                borderRight: idx < blocks.length - 1 ? "1px solid var(--color-border-subtle)" : "none",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                backgroundColor: "transparent",
               }}
             >
-              <span className="eyebrow-muted" style={{ display: "block", marginBottom: "8px" }}>
-                {item.label}
-              </span>
-              <p
+              <div>
+                <span
+                  style={{
+                    display: "block",
+                    fontSize: "0.7rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    color: block.accent ? "var(--color-burgundy)" : "var(--color-gold)",
+                    marginBottom: "12px",
+                  }}
+                >
+                  {block.label}
+                </span>
+
+                <div
+                  style={{
+                    fontFamily: "var(--font-sans)",
+                    fontSize: "clamp(1.05rem, 1.4vw, 1.25rem)",
+                    fontWeight: 700,
+                    letterSpacing: "-0.01em",
+                    color: "var(--color-charcoal)",
+                    lineHeight: 1.3,
+                    marginBottom: "8px",
+                  }}
+                >
+                  {block.primary}
+                </div>
+              </div>
+
+              <div
                 style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: "1.1rem",
-                  fontWeight: 600,
-                  color: "var(--color-charcoal)",
-                  marginBottom: "4px",
+                  fontSize: "0.825rem",
+                  color: "var(--color-text-secondary)",
+                  lineHeight: 1.5,
+                  paddingTop: "12px",
+                  borderTop: "1px dashed var(--color-border-subtle)",
                 }}
               >
-                {item.primary}
-              </p>
-              <p style={{ fontSize: "0.875rem", color: "var(--color-text-secondary)" }}>
-                {item.secondary}
-              </p>
+                {block.secondary}
+              </div>
             </div>
           ))}
         </div>

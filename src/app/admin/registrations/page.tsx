@@ -27,9 +27,15 @@ export default function AdminRegistrationsPage() {
     if (packageSelected !== "all") params.set("package_selected", packageSelected);
 
     fetch(`/api/admin/registrations?${params.toString()}`)
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 401) {
+          window.location.href = "/admin/login";
+          return null;
+        }
+        return res.json();
+      })
       .then((data) => {
-        if (data.success) setRegistrations(data.data);
+        if (data && data.success) setRegistrations(data.data);
         setLoading(false);
       })
       .catch(() => setLoading(false));

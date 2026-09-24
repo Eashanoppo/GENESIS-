@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { EVENT_CONFIG } from "@/config/event";
 
 export default function Footer() {
@@ -8,140 +9,325 @@ export default function Footer() {
       style={{
         backgroundColor: "var(--color-charcoal)",
         color: "var(--color-warm-white)",
-        paddingTop: "64px",
+        paddingTop: "clamp(56px, 7vw, 84px)",
         paddingBottom: "48px",
       }}
     >
       <div className="container">
+        {/* 4-Column Structured Publication Footer */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: "48px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "clamp(36px, 4vw, 56px)",
             marginBottom: "56px",
           }}
         >
-          {/* Identity */}
-          <div style={{ maxWidth: "360px" }}>
+          {/* Column 1: GENESIS Identity & Description */}
+          <div style={{ maxWidth: "340px" }}>
             <span
               style={{
                 fontFamily: "var(--font-editorial)",
-                fontSize: "1.75rem",
+                fontSize: "1.85rem",
                 fontWeight: 600,
                 color: "var(--color-warm-white)",
                 display: "block",
                 marginBottom: "8px",
+                letterSpacing: "-0.01em",
               }}
             >
               GENESIS
             </span>
-            <p style={{ fontSize: "0.85rem", color: "var(--color-cream)", marginBottom: "16px" }}>
-              {EVENT_CONFIG.tagline} — {EVENT_CONFIG.theme}
+            <p style={{ fontSize: "0.85rem", color: "var(--color-gold)", marginBottom: "14px", fontWeight: 600 }}>
+              {EVENT_CONFIG.tagline}
             </p>
-            <p style={{ fontSize: "0.85rem", color: "var(--color-text-inverse-muted)", lineHeight: 1.6 }}>
-              Organized with pride by the {EVENT_CONFIG.organizer}.
+            <p style={{ fontSize: "0.84rem", color: "var(--color-text-inverse-muted)", lineHeight: 1.65 }}>
+              A benchmark university plenary summit organized by the {EVENT_CONFIG.organizer}. Convening academic leadership, master communicators, and ambitious students for a transformative day of ideas.
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Column 2: Event Navigation */}
           <div>
             <span
               style={{
-                fontSize: "0.75rem",
+                fontSize: "0.72rem",
                 fontWeight: 700,
-                letterSpacing: "0.12em",
+                letterSpacing: "0.14em",
                 textTransform: "uppercase",
                 color: "var(--color-gold)",
                 display: "block",
-                marginBottom: "16px",
+                marginBottom: "18px",
               }}
             >
-              Navigation
+              Event
             </span>
             <ul style={{ listStyleType: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
               <li>
-                <a href="#event" style={{ fontSize: "0.88rem", color: "var(--color-text-inverse-muted)" }}>
+                <a href="#event" style={{ fontSize: "0.86rem", color: "var(--color-text-inverse-muted)", transition: "color var(--transition-fast)" }}>
                   Event Overview
                 </a>
               </li>
               <li>
-                <a href="#speakers" style={{ fontSize: "0.88rem", color: "var(--color-text-inverse-muted)" }}>
+                <a href="#speakers" style={{ fontSize: "0.86rem", color: "var(--color-text-inverse-muted)", transition: "color var(--transition-fast)" }}>
                   Plenary Speakers
                 </a>
               </li>
               <li>
-                <a href="#experience" style={{ fontSize: "0.88rem", color: "var(--color-text-inverse-muted)" }}>
+                <a href="#experience" style={{ fontSize: "0.86rem", color: "var(--color-text-inverse-muted)", transition: "color var(--transition-fast)" }}>
                   The Experience
                 </a>
               </li>
               <li>
-                <a href="#club" style={{ fontSize: "0.88rem", color: "var(--color-text-inverse-muted)" }}>
-                  About Rotaract Club
-                </a>
-              </li>
-              <li>
-                <a href="#faq" style={{ fontSize: "0.88rem", color: "var(--color-text-inverse-muted)" }}>
+                <a href="#faq" style={{ fontSize: "0.86rem", color: "var(--color-text-inverse-muted)", transition: "color var(--transition-fast)" }}>
                   Frequently Asked Questions
                 </a>
               </li>
               <li>
-                <Link href="/register" style={{ fontSize: "0.88rem", color: "var(--color-gold)" }}>
-                  Registration Form →
+                <Link href="/register" style={{ fontSize: "0.86rem", color: "var(--color-gold)", fontWeight: 600 }}>
+                  Register for Summit →
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Venue & System */}
+          {/* Column 3: Organization */}
           <div>
             <span
               style={{
-                fontSize: "0.75rem",
+                fontSize: "0.72rem",
                 fontWeight: 700,
-                letterSpacing: "0.12em",
+                letterSpacing: "0.14em",
                 textTransform: "uppercase",
                 color: "var(--color-gold)",
                 display: "block",
-                marginBottom: "16px",
+                marginBottom: "18px",
               }}
             >
-              Event Destination
+              Organization
             </span>
-            <p style={{ fontSize: "0.88rem", color: "var(--color-text-inverse-muted)", lineHeight: 1.6, marginBottom: "20px" }}>
-              {EVENT_CONFIG.venueFull}
-            </p>
+            <ul style={{ listStyleType: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
+              <li>
+                <a href="#club" style={{ fontSize: "0.86rem", color: "var(--color-text-inverse-muted)" }}>
+                  Rotaract Club of DIU
+                </a>
+              </li>
+              <li>
+                <span style={{ fontSize: "0.86rem", color: "var(--color-text-inverse-muted)" }}>
+                  Rotary District 3281
+                </span>
+              </li>
+              <li>
+                <a href="#club" style={{ fontSize: "0.86rem", color: "var(--color-text-inverse-muted)" }}>
+                  Leadership &amp; Service
+                </a>
+              </li>
+              <li>
+                <Link
+                  href="/admin/login"
+                  style={{
+                    fontSize: "0.84rem",
+                    color: "var(--color-text-inverse-muted)",
+                    textDecoration: "underline",
+                    textUnderlineOffset: "3px",
+                  }}
+                >
+                  Organizers Portal Login →
+                </Link>
+              </li>
+            </ul>
+          </div>
 
+          {/* Column 4: Contact & Venue */}
+          <div>
             <span
               style={{
-                fontSize: "0.75rem",
+                fontSize: "0.72rem",
                 fontWeight: 700,
-                letterSpacing: "0.12em",
+                letterSpacing: "0.14em",
                 textTransform: "uppercase",
                 color: "var(--color-gold)",
                 display: "block",
-                marginBottom: "10px",
+                marginBottom: "18px",
               }}
             >
-              Organizers Portal
+              Contact &amp; Location
             </span>
-            <Link
-              href="/admin/login"
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px", fontSize: "0.84rem", color: "var(--color-text-inverse-muted)", lineHeight: 1.6 }}>
+              <div>
+                <strong style={{ color: "var(--color-warm-white)", display: "block" }}>Summit Venue:</strong>
+                {EVENT_CONFIG.venueFull}
+              </div>
+              <div>
+                <strong style={{ color: "var(--color-warm-white)", display: "block" }}>Event Date:</strong>
+                {EVENT_CONFIG.dateDisplay} (Tuesday)
+              </div>
+              <div>
+                <strong style={{ color: "var(--color-warm-white)", display: "block" }}>Inquiries:</strong>
+                <span>info@rotaract.org.bd</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Partners & Affiliations Showcase with Consistent Dimensions */}
+        <div
+          style={{
+            padding: "32px 0",
+            borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+            marginBottom: "32px",
+          }}
+        >
+          <div style={{ marginBottom: "20px", textAlign: "center" }}>
+            <span
               style={{
-                fontSize: "0.85rem",
-                color: "var(--color-text-inverse-muted)",
-                textDecoration: "underline",
-                textUnderlineOffset: "4px",
+                fontSize: "0.72rem",
+                fontWeight: 700,
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+                color: "var(--color-gold)",
+                display: "inline-block",
               }}
             >
-              Admin Dashboard Login →
-            </Link>
+              Official Partners &amp; Affiliations
+            </span>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gap: "20px",
+              alignItems: "stretch",
+            }}
+          >
+            {/* Organizer */}
+            <div
+              style={{
+                backgroundColor: "#FFFFFF",
+                borderRadius: "var(--radius-sm)",
+                padding: "16px 20px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.2)",
+                minHeight: "100px",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "0.68rem",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  color: "#6B7280",
+                  marginBottom: "10px",
+                }}
+              >
+                Organized By
+              </span>
+              <div style={{ position: "relative", width: "100%", height: "48px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <Image
+                  src="/partners/organizer.jpeg"
+                  alt="Rotaract Club of Daffodil International University"
+                  width={220}
+                  height={48}
+                  style={{ width: "auto", height: "auto", maxHeight: "48px", objectFit: "contain" }}
+                />
+              </div>
+            </div>
+
+            {/* Host Institution */}
+            <div
+              style={{
+                backgroundColor: "#FFFFFF",
+                borderRadius: "var(--radius-sm)",
+                padding: "16px 20px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.2)",
+                minHeight: "100px",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "0.68rem",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  color: "#6B7280",
+                  marginBottom: "10px",
+                }}
+              >
+                Host Institution
+              </span>
+              <div style={{ position: "relative", width: "100%", height: "48px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <Image
+                  src="/partners/host.jpeg"
+                  alt="Daffodil International University"
+                  width={220}
+                  height={48}
+                  style={{ width: "auto", height: "auto", maxHeight: "48px", objectFit: "contain" }}
+                />
+              </div>
+            </div>
+
+            {/* Technology Partner */}
+            <a
+              href="https://www.unleft.space/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                backgroundColor: "#FFFFFF",
+                borderRadius: "var(--radius-sm)",
+                padding: "16px 20px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.2)",
+                textDecoration: "none",
+                minHeight: "100px",
+                transition: "transform 0.2s ease, box-shadow 0.2s ease",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "0.68rem",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  color: "#6B7280",
+                  marginBottom: "10px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "4px",
+                }}
+              >
+                Technology Partner ↗
+              </span>
+              <div style={{ position: "relative", width: "100%", height: "48px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <Image
+                  src="/partners/tecnoloy_partner.png"
+                  alt="UNLEFT LLC"
+                  width={180}
+                  height={48}
+                  style={{ width: "auto", height: "auto", maxHeight: "48px", objectFit: "contain" }}
+                />
+              </div>
+            </a>
           </div>
         </div>
 
         {/* Bottom Credits & Copyright */}
         <div
           style={{
-            paddingTop: "32px",
+            paddingTop: "24px",
             borderTop: "1px solid var(--color-border-dark)",
             display: "flex",
             flexWrap: "wrap",
@@ -159,7 +345,7 @@ export default function Footer() {
           <div>
             Technology Partner:{" "}
             <a
-              href={EVENT_CONFIG.partner.url}
+              href="https://www.unleft.space/"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -169,7 +355,7 @@ export default function Footer() {
                 textUnderlineOffset: "3px",
               }}
             >
-              {EVENT_CONFIG.partner.name}
+              UNLEFT LLC
             </a>
           </div>
         </div>

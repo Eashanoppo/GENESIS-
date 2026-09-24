@@ -26,9 +26,15 @@ export default function AdminDashboardPage() {
 
   useEffect(() => {
     fetch("/api/admin/registrations")
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 401) {
+          window.location.href = "/admin/login";
+          return null;
+        }
+        return res.json();
+      })
       .then((data) => {
-        if (data.success) {
+        if (data && data.success) {
           setStats(data.stats);
           setRecent(data.data.slice(0, 8));
         }

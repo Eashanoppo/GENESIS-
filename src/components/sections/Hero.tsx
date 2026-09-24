@@ -5,256 +5,176 @@ import { EVENT_CONFIG } from "@/config/event";
 
 export default function Hero() {
   return (
-    <section
-      style={{
-        position: "relative",
-        paddingTop: "clamp(48px, 7vw, 84px)",
-        paddingBottom: "clamp(56px, 8vw, 96px)",
-        borderBottom: "1px solid var(--color-border-subtle)",
-        overflow: "hidden",
-        backgroundColor: "var(--color-surface-base)",
-      }}
-    >
-      <div className="container">
-        <div
-          className="hero-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1.1fr 0.9fr",
-            gap: "clamp(36px, 5vw, 64px)",
-            alignItems: "center",
-          }}
+    <section className="genesis-hero" aria-label="GENESIS Summit 2026 Hero">
+      {/* ============================================================
+          Layered Atmospheric Background & Brand Geometry
+          ============================================================ */}
+      <div className="genesis-hero-bg" aria-hidden="true">
+        {/* Deep Atmospheric Wine Blooms */}
+        <div className="genesis-hero-bloom-primary" />
+        <div className="genesis-hero-bloom-secondary" />
+
+        {/* Architectural Diamond Construct (Inspired by Official Artwork) */}
+        <div className="genesis-hero-diamond-outer" />
+        <div className="genesis-hero-diamond-inner" />
+
+        {/* Precision Horizontal Axis Line */}
+        <div className="genesis-hero-axis-line" />
+
+        {/* Soft Radiant Light Flare Source */}
+        <div className="genesis-hero-flare" />
+
+        {/* Lower Diamond Grid Matrix */}
+        <svg
+          className="genesis-hero-matrix"
+          width="120"
+          height="70"
+          viewBox="0 0 120 70"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Left Column: Editorial Information & Action */}
-          <div>
-            {/* Institution Badge */}
-            <div style={{ marginBottom: "16px", display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}>
-              <span className="eyebrow" style={{ color: "var(--color-burgundy)" }}>
+          <g fill="#F5C84B" opacity="0.45">
+            <rect x="60" y="5" width="6" height="6" transform="rotate(45 60 5)" />
+            <rect x="48" y="17" width="6" height="6" transform="rotate(45 48 17)" />
+            <rect x="60" y="17" width="6" height="6" transform="rotate(45 60 17)" />
+            <rect x="72" y="17" width="6" height="6" transform="rotate(45 72 17)" />
+            <rect x="36" y="29" width="6" height="6" transform="rotate(45 36 29)" />
+            <rect x="48" y="29" width="6" height="6" transform="rotate(45 48 29)" />
+            <rect x="60" y="29" width="6" height="6" transform="rotate(45 60 29)" />
+            <rect x="72" y="29" width="6" height="6" transform="rotate(45 72 29)" />
+            <rect x="84" y="29" width="6" height="6" transform="rotate(45 84 29)" />
+            <rect x="48" y="41" width="6" height="6" transform="rotate(45 48 41)" />
+            <rect x="60" y="41" width="6" height="6" transform="rotate(45 60 41)" />
+            <rect x="72" y="41" width="6" height="6" transform="rotate(45 72 41)" />
+            <rect x="60" y="53" width="6" height="6" transform="rotate(45 60 53)" />
+          </g>
+        </svg>
+      </div>
+
+      {/* ============================================================
+          Main Hero Grid: Content & Integrated Artwork
+          ============================================================ */}
+      <div className="container genesis-hero-container">
+        <div className="genesis-hero-grid">
+          {/* Left Column: Typography, Hierarchy & Logistics */}
+          <div className="genesis-hero-content">
+            {/* Institutional Eyebrow */}
+            <div className="genesis-hero-institution">
+              <span className="genesis-hero-institution-name">
                 {EVENT_CONFIG.organizer}
               </span>
-              <span style={{ fontSize: "0.75rem", color: "var(--color-text-muted)" }}>•</span>
-              <span style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--color-text-muted)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+              <span className="genesis-hero-sep">•</span>
+              <span className="genesis-hero-institution-sub">
                 District 3281
               </span>
             </div>
 
-            {/* Display Title */}
-            <h1
-              className="title-display"
-              style={{
-                marginBottom: "16px",
-                color: "var(--color-charcoal)",
-                lineHeight: 1.05,
-              }}
-            >
-              GENESIS
-              <span
-                style={{
-                  display: "block",
-                  fontFamily: "var(--font-sans)",
-                  fontSize: "clamp(1.2rem, 2.2vw, 1.75rem)",
-                  fontWeight: 500,
-                  letterSpacing: "-0.01em",
-                  color: "var(--color-burgundy)",
-                  marginTop: "8px",
-                }}
-              >
-                The Beginning of a New Era
-              </span>
+            {/* Confident Primary Visual Anchor: GENESIS */}
+            <h1 className="genesis-hero-title">
+              <span className="genesis-hero-title-main">GENESIS</span>
+              <span className="genesis-hero-title-sub">The Beginning of a New Era</span>
             </h1>
 
-            {/* Theme & Tagline */}
-            <div
-              style={{
-                display: "inline-block",
-                padding: "4px 12px",
-                backgroundColor: "var(--color-gold-subtle)",
-                border: "1px solid var(--color-gold-light)",
-                borderRadius: "var(--radius-xs)",
-                fontSize: "0.825rem",
-                fontWeight: 600,
-                color: "var(--color-gold)",
-                letterSpacing: "0.04em",
-                textTransform: "uppercase",
-                marginBottom: "20px",
-              }}
-            >
-              {EVENT_CONFIG.theme}
+            {/* Editorial Tag / Theme Badge */}
+            <div className="genesis-hero-tag">
+              <span className="genesis-hero-tag-diamond" />
+              <span>A Day of Ideas &amp; Inspiration</span>
             </div>
 
-            {/* Lead Narrative */}
-            <p
-              className="body-lead"
-              style={{
-                fontSize: "clamp(1.025rem, 1.8vw, 1.2rem)",
-                marginBottom: "32px",
-                color: "var(--color-text-secondary)",
-                lineHeight: 1.6,
-              }}
-            >
+            {/* Event Description */}
+            <p className="genesis-hero-lead">
               A benchmark university plenary summit convening pioneering academic leadership, master communicators, and forward-looking students for a day of transformative ideas.
             </p>
 
-            {/* Key Logistics Bar */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-                gap: "20px",
-                paddingTop: "20px",
-                paddingBottom: "24px",
-                borderTop: "1px solid var(--color-border-subtle)",
-                borderBottom: "1px solid var(--color-border-subtle)",
-                marginBottom: "32px",
-              }}
-            >
-              <div>
-                <span className="eyebrow-muted" style={{ display: "block", marginBottom: "4px", fontSize: "0.68rem" }}>
-                  Date & Timing
-                </span>
-                <span style={{ fontSize: "1rem", fontWeight: 700, color: "var(--color-charcoal)" }}>
-                  {EVENT_CONFIG.dateDisplay}
-                </span>
+            {/* Clean Editorial Information Row */}
+            <div className="genesis-hero-logistics">
+              <div className="genesis-hero-logistics-item">
+                <span className="genesis-hero-logistics-label">Date &amp; Timing</span>
+                <span className="genesis-hero-logistics-value">03 November 2026</span>
               </div>
 
-              <div>
-                <span className="eyebrow-muted" style={{ display: "block", marginBottom: "4px", fontSize: "0.68rem" }}>
-                  Auditorium
-                </span>
-                <span style={{ fontSize: "1rem", fontWeight: 700, color: "var(--color-charcoal)" }}>
-                  {EVENT_CONFIG.venueShort}
-                </span>
+              <div className="genesis-hero-logistics-divider" />
+
+              <div className="genesis-hero-logistics-item">
+                <span className="genesis-hero-logistics-label">Venue</span>
+                <span className="genesis-hero-logistics-value">ICH, Ab4 3rd Floor, DIU</span>
               </div>
 
-              <div>
-                <span className="eyebrow-muted" style={{ display: "block", marginBottom: "4px", fontSize: "0.68rem" }}>
-                  Registration Period
-                </span>
-                <span style={{ fontSize: "1rem", fontWeight: 700, color: "var(--color-burgundy)" }}>
-                  25 Oct – 01 Nov
-                </span>
+              <div className="genesis-hero-logistics-divider" />
+
+              <div className="genesis-hero-logistics-item">
+                <span className="genesis-hero-logistics-label">Registration Period</span>
+                <span className="genesis-hero-logistics-value accent">25 Oct – 01 Nov</span>
               </div>
             </div>
 
-            {/* CTAs */}
-            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "16px" }}>
-              <Link
-                href="/register"
-                className="btn btn-primary"
-                style={{ padding: "14px 34px", fontSize: "1rem" }}
-              >
-                Register for GENESIS
+            {/* Actions: Primary & Secondary CTAs */}
+            <div className="genesis-hero-ctas">
+              <Link href="/register" className="genesis-hero-btn-primary">
+                <span>Register for GENESIS</span>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg>
               </Link>
-              <a
-                href="#event"
-                className="btn btn-secondary"
-                style={{ padding: "14px 24px", fontSize: "0.925rem" }}
-              >
-                Event Schedule & Highlights
+              <a href="#event" className="genesis-hero-btn-secondary">
+                <span>Event Schedule &amp; Highlights</span>
               </a>
             </div>
 
-            {/* Scarcity Note */}
-            <div style={{ marginTop: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-              <span
-                style={{
-                  width: "8px",
-                  height: "8px",
-                  borderRadius: "50%",
-                  backgroundColor: "var(--color-burgundy)",
-                  display: "inline-block",
-                }}
-              />
-              <span style={{ fontSize: "0.825rem", color: "var(--color-text-muted)" }}>
-                Strict venue capacity. Limited seats allocated on first-come registration.
-              </span>
+            {/* Capacity Scarcity Indicator */}
+            <div className="genesis-hero-scarcity">
+              <span className="genesis-hero-pulse" />
+              <span>Strict venue capacity. Limited seats allocated on first-come registration.</span>
             </div>
           </div>
 
-          {/* Right Column: Featured Premium Visual Showcase */}
-          <div style={{ position: "relative" }}>
-            {/* Luminous Glow Halo */}
-            <div
-              style={{
-                position: "absolute",
-                inset: "-8px",
-                background: "radial-gradient(ellipse at center, rgba(93, 18, 34, 0.16) 0%, rgba(20, 20, 22, 0) 70%)",
-                borderRadius: "var(--radius-md)",
-                filter: "blur(20px)",
-                zIndex: 0,
-                pointerEvents: "none",
-              }}
-            />
+          {/* Right Column: Integrated Official GENESIS Artwork */}
+          <div className="genesis-hero-visual">
+            {/* Radiant Ambient Light Aura */}
+            <div className="genesis-hero-visual-glow" />
 
-            {/* Artwork Frame */}
-            <div
-              style={{
-                position: "relative",
-                zIndex: 1,
-                borderRadius: "var(--radius-sm)",
-                overflow: "hidden",
-                border: "1.5px solid var(--color-border-strong)",
-                backgroundColor: "var(--color-charcoal)",
-                boxShadow: "0 24px 48px -12px rgba(20, 20, 22, 0.22)",
-              }}
-            >
-              {/* Image Frame */}
-              <div
-                style={{
-                  position: "relative",
-                  width: "100%",
-                  aspectRatio: "16 / 9",
-                }}
-              >
+            {/* Architectural Frame with Corner Ticks */}
+            <div className="genesis-hero-frame">
+              {/* Corner Ticks */}
+              <div className="genesis-hero-corner genesis-hero-corner-tl" />
+              <div className="genesis-hero-corner genesis-hero-corner-tr" />
+              <div className="genesis-hero-corner genesis-hero-corner-bl" />
+              <div className="genesis-hero-corner genesis-hero-corner-br" />
+
+              {/* Responsive Image Aspect Canvas */}
+              <div className="genesis-hero-image-canvas">
                 <Image
                   src="/images/genesis-artwork.png"
                   alt="GENESIS — The Beginning of a New Era official visual banner"
                   fill
                   priority
-                  quality={95}
-                  sizes="(max-width: 900px) 100vw, 550px"
+                  quality={75}
+                  sizes="(max-width: 992px) 100vw, 580px"
                   style={{
                     objectFit: "cover",
                   }}
                 />
-
-                {/* Corner Tag */}
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "12px",
-                    right: "12px",
-                    backgroundColor: "rgba(20, 20, 22, 0.85)",
-                    backdropFilter: "blur(6px)",
-                    color: "var(--color-warm-white)",
-                    fontSize: "0.68rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    padding: "4px 10px",
-                    borderRadius: "var(--radius-xs)",
-                    border: "1px solid rgba(255, 255, 255, 0.15)",
-                  }}
-                >
-                  Official Event Identity
-                </div>
               </div>
 
-              {/* Bottom Institutional Strip */}
-              <div
-                style={{
-                  padding: "12px 18px",
-                  backgroundColor: "var(--color-charcoal-soft)",
-                  borderTop: "1px solid var(--color-border-dark)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  fontSize: "0.75rem",
-                  color: "var(--color-text-inverse-muted)",
-                }}
-              >
-                <span>Rotary · Rotaract DIU · Daffodil International University</span>
-                <span style={{ color: "var(--color-gold)", fontWeight: 600 }}>03 NOV 2026</span>
+              {/* Provenance Footer Strip */}
+              <div className="genesis-hero-provenance">
+                <span className="genesis-hero-provenance-text">
+                  Rotary · Rotaract DIU · Daffodil International University
+                </span>
+                <span className="genesis-hero-provenance-badge">
+                  ✦ 03 NOV 2026
+                </span>
               </div>
             </div>
           </div>

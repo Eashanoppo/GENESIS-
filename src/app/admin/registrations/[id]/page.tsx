@@ -20,9 +20,15 @@ export default function RegistrationDetailPage({
   const fetchRecord = () => {
     setLoading(true);
     fetch(`/api/admin/registrations/${id}`)
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 401) {
+          window.location.href = "/admin/login";
+          return null;
+        }
+        return res.json();
+      })
       .then((data) => {
-        if (data.success) {
+        if (data && data.success) {
           setRegistration(data.data);
           setNotes(data.data.payment_notes || "");
         }
