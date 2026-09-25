@@ -7,6 +7,7 @@ export interface Speaker {
   topics?: string[];
   description: string;
   image: string;
+  imagePosition?: string;
   isChiefGuest?: boolean;
   isTBA?: boolean;
 }
@@ -21,6 +22,7 @@ export const SPEAKERS: Speaker[] = [
     description:
       "A visionary academic leader exploring the transformative role of AI across modern education, cutting-edge software research, and preparing students for the next generation of technological frontiers.",
     image: "/speakers/Dr._Imran_mahmud.jpeg",
+    imagePosition: "center 20%",
     isChiefGuest: true,
   },
   {
@@ -38,5 +40,6 @@ export const SPEAKERS: Speaker[] = [
     description:
       "A renowned educator dedicated to equipping university students and emerging leaders with persuasive presentation mastery, workplace communication excellence, and high-impact career readiness.",
     image: "/speakers/Sabbir_Sarkar.jpeg",
+    imagePosition: "top center",
   },
 ];

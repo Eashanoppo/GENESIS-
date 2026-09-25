@@ -227,13 +227,13 @@ export default function Footer() {
               >
                 Organized By
               </span>
-              <div style={{ position: "relative", width: "100%", height: "48px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div style={{ position: "relative", width: "100%", height: "48px" }}>
                 <Image
                   src="/partners/organizer.jpeg"
                   alt="Rotaract Club of Daffodil International University"
-                  width={220}
-                  height={48}
-                  style={{ width: "auto", height: "auto", maxHeight: "48px", objectFit: "contain" }}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 220px"
+                  style={{ objectFit: "contain" }}
                 />
               </div>
             </div>
@@ -265,13 +265,13 @@ export default function Footer() {
               >
                 Host Institution
               </span>
-              <div style={{ position: "relative", width: "100%", height: "48px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div style={{ position: "relative", width: "100%", height: "48px" }}>
                 <Image
                   src="/partners/host.jpeg"
                   alt="Daffodil International University"
-                  width={220}
-                  height={48}
-                  style={{ width: "auto", height: "auto", maxHeight: "48px", objectFit: "contain" }}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 220px"
+                  style={{ objectFit: "contain" }}
                 />
               </div>
             </div>
@@ -311,13 +311,13 @@ export default function Footer() {
               >
                 Technology Partner ↗
               </span>
-              <div style={{ position: "relative", width: "100%", height: "48px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div style={{ position: "relative", width: "100%", height: "48px" }}>
                 <Image
                   src="/partners/tecnoloy_partner.png"
                   alt="UNLEFT LLC"
-                  width={180}
-                  height={48}
-                  style={{ width: "auto", height: "auto", maxHeight: "48px", objectFit: "contain" }}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 180px"
+                  style={{ objectFit: "contain" }}
                 />
               </div>
             </a>

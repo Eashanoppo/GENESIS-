@@ -145,7 +145,10 @@ export default function SpeakersSection() {
                     alt={speaker.name}
                     fill
                     sizes="(max-width: 768px) 100vw, 520px"
-                    style={{ objectFit: "cover" }}
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: speaker.imagePosition || "center center",
+                    }}
                     priority={speaker.isChiefGuest}
                   />
                 </div>
