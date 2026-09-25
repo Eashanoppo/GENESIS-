@@ -1,6 +1,7 @@
 @import "./tokens.css";
 @import "./typography.css";
 @import "./hero.css";
+@import "./registration.css";
 
 /* Reset & Box Sizing */
 *, *::before, *::after {

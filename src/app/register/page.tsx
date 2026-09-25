@@ -13,7 +13,7 @@ export default function RegisterPage() {
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
       <Navbar />
-      <main style={{ flex: 1, paddingTop: "clamp(36px, 6vw, 64px)", paddingBottom: "clamp(56px, 8vw, 96px)" }}>
+      <main style={{ flex: 1, paddingTop: "clamp(24px, 4vw, 40px)", paddingBottom: "clamp(48px, 6vw, 80px)" }}>
         <div className="container">
           <RegistrationWizard />
         </div>

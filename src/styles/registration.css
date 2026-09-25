@@ -1,0 +1,667 @@
+/* ============================================================
+   GENESIS Registration Page Styles
+   Editorial, Prestigious, High-Contrast & Accessible
+   ============================================================ */
+
+/* Outer Wizard Container */
+.reg-wizard {
+  width: 100%;
+  margin: 0 auto;
+  transition: max-width var(--transition-normal);
+}
+
+.reg-wizard-wide {
+  max-width: 1040px;
+}
+
+.reg-wizard-narrow {
+  max-width: 820px;
+}
+
+/* ============================================================
+   Progress Indicator (Editorial & Subtle)
+   ============================================================ */
+.reg-progress-container {
+  margin-bottom: clamp(24px, 4vw, 36px);
+  padding: 0 8px;
+}
+
+/* Desktop 3-Step Bar */
+.reg-progress-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 580px;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+.reg-progress-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 4px 8px;
+}
+
+.reg-progress-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.reg-progress-step.active .reg-progress-num {
+  color: var(--color-burgundy);
+  font-weight: 700;
+}
+
+.reg-progress-step.completed .reg-progress-num {
+  color: var(--color-burgundy);
+  font-weight: 600;
+}
+
+.reg-progress-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.reg-progress-step.active .reg-progress-label {
+  color: var(--color-charcoal);
+  font-weight: 700;
+}
+
+.reg-progress-step.completed .reg-progress-label {
+  color: var(--color-text-secondary);
+}
+
+/* Connecting Line */
+.reg-progress-divider {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-border-subtle);
+  min-width: 32px;
+  max-width: 72px;
+  position: relative;
+}
+
+.reg-progress-divider.active-fill {
+  background-color: var(--color-burgundy);
+}
+
+/* Mobile Progress Display */
+.reg-progress-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.reg-progress-mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reg-progress-mobile-step {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-burgundy);
+}
+
+.reg-progress-mobile-title {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+}
+
+.reg-progress-mobile-track {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.reg-progress-mobile-bar {
+  height: 100%;
+  background-color: var(--color-burgundy);
+  transition: width var(--transition-normal);
+}
+
+/* ============================================================
+   Page Introduction Header
+   ============================================================ */
+.reg-header {
+  text-align: center;
+  margin-bottom: clamp(24px, 3.5vw, 36px);
+}
+
+.reg-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-burgundy);
+  margin-bottom: 8px;
+}
+
+.reg-eyebrow-accent {
+  display: inline-block;
+  font-size: 0.65rem;
+  opacity: 0.75;
+}
+
+.reg-title {
+  font-family: var(--font-editorial);
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--color-charcoal);
+  margin-bottom: 10px;
+}
+
+.reg-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   Category Cards Grid
+   ============================================================ */
+.reg-category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-bottom: clamp(24px, 3.5vw, 36px);
+}
+
+/* Category Card */
+.reg-card {
+  position: relative;
+  background-color: var(--color-surface-card);
+  border: 1.5px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  padding: clamp(28px, 3.5vw, 38px);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 420px;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+}
+
+/* Top Accent Line (Initially Hidden, Appears on Hover/Selected) */
+.reg-card::before {
+  content: "";
+  position: absolute;
+  top: -1.5px;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  background-color: var(--color-burgundy);
+  opacity: 0;
+  transform: scaleX(0.4);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.reg-card:hover {
+  border-color: var(--color-burgundy);
+  background-color: #FAF7F4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(93, 18, 34, 0.05);
+}
+
+.reg-card:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.reg-card:focus-visible {
+  border-color: var(--color-burgundy);
+  outline: 2px solid var(--color-burgundy);
+  outline-offset: 3px;
+}
+
+.reg-card.selected {
+  border-color: var(--color-burgundy);
+  background-color: var(--color-burgundy-surface);
+}
+
+.reg-card.selected::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Top Section: Metadata & Badge */
+.reg-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.reg-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reg-card-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--color-burgundy);
+  background-color: var(--color-burgundy-surface);
+  padding: 2px 7px;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(93, 18, 34, 0.12);
+}
+
+.reg-card-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-burgundy);
+}
+
+.reg-card-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 3px 9px;
+  border-radius: var(--radius-xs);
+  text-transform: uppercase;
+}
+
+.reg-card-badge-free {
+  color: var(--color-success);
+  background-color: var(--color-success-bg);
+  border: 1px solid var(--color-success-border);
+}
+
+.reg-card-badge-rotaract {
+  color: var(--color-burgundy);
+  background-color: var(--color-burgundy-surface);
+  border: 1px solid rgba(93, 18, 34, 0.2);
+}
+
+/* Card Title & Description */
+.reg-card-heading {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.85rem, 2.4vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--color-charcoal);
+  margin-bottom: 10px;
+  line-height: 1.18;
+}
+
+.reg-card-desc {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+/* Card Pricing Box */
+.reg-card-pricing {
+  padding: 16px 18px;
+  background-color: var(--color-surface-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xs);
+  margin: 16px 0;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.reg-card:hover .reg-card-pricing {
+  background-color: #FFFFFF;
+  border-color: var(--color-border-default);
+}
+
+.reg-card-pricing-primary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.reg-card-pricing-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.reg-card-pricing-amount {
+  font-family: var(--font-editorial);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-burgundy);
+}
+
+.reg-card-pricing-sub {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.45;
+}
+
+/* Benefit Badges ("What You Get") */
+.reg-card-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.reg-benefit-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  background-color: var(--color-surface-base);
+  border: 1px solid var(--color-border-subtle);
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+}
+
+.reg-card:hover .reg-benefit-tag {
+  background-color: #FFFFFF;
+  border-color: var(--color-border-default);
+  color: var(--color-charcoal);
+}
+
+/* Card Bottom Action Button (Themed identical to 'Register Now') */
+.reg-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border-subtle);
+  margin-top: auto;
+}
+
+.reg-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-burgundy);
+  color: var(--color-warm-white);
+  border: 1px solid var(--color-burgundy);
+  border-radius: var(--radius-sm);
+  padding: 10px 22px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(20, 20, 22, 0.08);
+  transition: all var(--transition-fast);
+}
+
+.reg-card:hover .reg-action-btn,
+.reg-action-btn:hover {
+  background-color: var(--color-burgundy-hover);
+  border-color: var(--color-burgundy-hover);
+  box-shadow: 0 4px 14px rgba(93, 18, 34, 0.28);
+}
+
+.reg-card-arrow {
+  display: inline-block;
+  transition: transform var(--transition-fast);
+}
+
+.reg-card:hover .reg-card-arrow,
+.reg-subcat-card:hover .reg-card-arrow {
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   Trust / Event Note
+   ============================================================ */
+.reg-trust-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 20px;
+  margin-top: 8px;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.reg-trust-icon {
+  color: var(--color-gold);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.reg-trust-text {
+  font-family: var(--font-sans);
+  font-size: 0.825rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   Step 2: Sub-category Selection (Club Member)
+   ============================================================ */
+.reg-subcat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reg-subcat-card {
+  width: 100%;
+  background-color: var(--color-surface-card);
+  border: 1.5px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 24px 28px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  transition: all var(--transition-fast);
+}
+
+.reg-subcat-card:hover {
+  border-color: var(--color-burgundy);
+  background-color: #FAF7F4;
+  transform: translateX(3px);
+  box-shadow: 0 4px 14px rgba(93, 18, 34, 0.04);
+}
+
+.reg-subcat-card:focus-visible {
+  outline: 2px solid var(--color-burgundy);
+  outline-offset: 3px;
+}
+
+.reg-subcat-title {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  margin-bottom: 4px;
+}
+
+.reg-subcat-desc {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.reg-subcat-price-wrap {
+  text-align: right;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.reg-subcat-price {
+  font-family: var(--font-editorial);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-burgundy);
+  display: block;
+}
+
+.reg-subcat-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: var(--color-burgundy);
+  color: var(--color-warm-white);
+  border: 1px solid var(--color-burgundy);
+  border-radius: var(--radius-sm);
+  padding: 8px 18px;
+  font-family: var(--font-sans);
+  font-size: 0.825rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(20, 20, 22, 0.08);
+  transition: all var(--transition-fast);
+}
+
+.reg-subcat-card:hover .reg-subcat-btn,
+.reg-subcat-btn:hover {
+  background-color: var(--color-burgundy-hover);
+  border-color: var(--color-burgundy-hover);
+  box-shadow: 0 4px 14px rgba(93, 18, 34, 0.28);
+}
+
+/* ============================================================
+   Back / Navigation Buttons
+   ============================================================ */
+.reg-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-burgundy);
+  padding: 6px 12px;
+  border-radius: var(--radius-xs);
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: all var(--transition-fast);
+}
+
+.reg-back-btn:hover {
+  background-color: var(--color-burgundy-surface);
+  border-color: rgba(93, 18, 34, 0.15);
+}
+
+.reg-back-btn:focus-visible {
+  outline: 2px solid var(--color-burgundy);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   Mobile Adjustments
+   ============================================================ */
+@media (max-width: 768px) {
+  .reg-progress-desktop {
+    display: none;
+  }
+
+  .reg-progress-mobile {
+    display: flex;
+  }
+
+  .reg-category-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .reg-card {
+    min-height: auto;
+    padding: 24px 20px;
+    gap: 20px;
+  }
+
+  .reg-subcat-card {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .reg-subcat-price-wrap {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 14px;
+    border-top: 1px solid var(--color-border-subtle);
+  }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .reg-card,
+  .reg-card:hover,
+  .reg-subcat-card,
+  .reg-subcat-card:hover,
+  .reg-card-arrow,
+  .reg-card:hover .reg-card-arrow,
+  .reg-card::before {
+    transform: none !important;
+    transition: none !important;
+  }
+}
